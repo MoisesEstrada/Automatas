@@ -1,0 +1,74 @@
+CUANTIFICADORES Y CLASES DE CARACTERES 
+1.-Encontrar palabras de al menos 3 letras: 
+	Prueba: "El perro corre rápido" 
+
+ 	expreciones regulares:\b[a-zA-Z]{3,}\b
+
+2.-Detectar números con al menos 2 dígitos: 
+	Prueba: "123, 45, 6789" 
+
+ 	expreciones regulares:\b\d{2,}\b
+
+3.-Identificar palabras que comiencen con una vocal: 
+	Prueba: "Análisis de los eventos" 
+
+ 	expreciones regulares:\b[aeiouAEIOUáéíóú][a-zA-Z-áéíóú]*\b
+
+4.-Capturar cadenas de caracteres alfanuméricos de exactamente 5 caracteres: 
+	Prueba: "abc12 def34 ghi56 jkl78" 
+
+ 	expreciones regulares:\b[A-Za-z0-9]{5}\b
+
+5.-Encontrar direcciones IP (formato simplificado): 
+	Prueba: "La IP es 192.168.1.1 y la otra es 10.0.0.1"
+
+  	expreciones regulares:\b(?:\d{1,3}\.){3}\d{1,3}\b
+
+6.-Detectar palabras que contengan una secuencia de exactamente 2 vocales consecutivas: 
+	Prueba: "Leer, actuar, reunir" 
+
+ 	expreciones regulares:\b\w*[aeiou]{2}\w*\b
+
+7.-Encontrar números telefónicos en formato (123) 456-7890: 
+	Prueba: "Mi número es (123) 456-7890" 
+
+ 	expreciones regulares:\(\d{3}\) \d{3}-\d{4}
+
+8.-Identificar palabras que terminen en 'ing': 
+	Prueba: "I am running and singing"
+
+ 	expreciones regulares:\w+ing\b
+
+9.-Detectar palabras con al menos una letra mayúscula: 
+	Prueba: "Este es un Texto de Prueba" 
+
+ 	expreciones regulares:\b[A-Z][a-zA-Z]*\b
+
+10.-Capturar secuencias de uno o más dígitos, seguidas por una letra: 
+	Prueba: "123a 456b 789c"
+
+  	expreciones regulares:\d+[A-Za-z]
+
+11.-Encontrar palabras que contengan solo letras minúsculas: 
+	Prueba: "esto es una prueba con minusculas" 
+
+ 	expreciones regulares:\b[a-z]+\b
+
+12.-Detectar cadenas que contengan al menos una letra mayúscula y al menos un número: 
+	Prueba: "Abc123 y XyZ456" 
+
+ 	expreciones regulares:\b(?=.*[A-Z])(?=.*\d)[A-Za-z\d]+\b
+
+13.-Identificar códigos postales en formato de 5 dígitos: 
+	Prueba: "Mis códigos son 12345 y 67890"
+
+ 	expreciones regulares:\b\d{5}\b
+
+14.-Capturar secuencias de letras que contengan exactamente 3 letras minúsculas: 
+	Prueba: "abc def ghi jkl mno" 
+
+ 	expreciones regulares:\b[a-z]{3}\b
+15.-Encontrar palabras que empiecen con una consonante: 
+	Prueba: "Casa, elefante, perro, iguana"
+
+ 	expreciones regulares:\b[^aeiouAEIOU][a-zA-Z]+\b

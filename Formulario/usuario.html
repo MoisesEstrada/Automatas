@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="userForm" class="form">
+            <h2>Usuario</h2>
+            <div class="grupo">
+                <input type="text" id="userName" name="userName" required>
+                <label for="userName">Nombre:</label>
+                <div class="barra"></div>
+                <div class="error-message"></div>
+            </div>
+            <div class="grupo">
+                <input type="text" id="userAddress" name="userAddress" required>
+                <label for="userAddress">Dirección:</label>
+                <div class="barra"></div>
+                <div class="error-message"></div>
+            </div>
+            <div class="grupo">
+                <input type="text" id="userPhone" name="userPhone" pattern="[0-9]{9}" title="Debe contener 9 dígitos numéricos" required>
+                <label for="userPhone">Teléfono:</label>
+                <div class="barra"></div>
+                <div class="error-message"></div>
+            </div>
+            <div class="grupo">
+                <input type="email" id="userEmail" name="userEmail" required>
+                <label for="userEmail">Email:</label>
+                <div class="barra"></div>
+                <div class="error-message"></div>
+            </div>
+            <div class="grupo">
+                <select id="userSex" name="userSex" required>
+                    <option value="">Selecciona</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <label for="userSex">Sexo:</label>
+                <div class="barra"></div>
+                <div class="error-message"></div>
+            </div>
+            <div class="grupo">
+                <input type="number" id="userAge" name="userAge" min="18" max="100" required>
+                <label for="userAge">Edad:</label>
+                <div class="barra"></div>
+                <div class="error-message"></div>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

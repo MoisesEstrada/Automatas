@@ -1,0 +1,6 @@
+admin@admin.com
+admin123
+docente@docente.com
+doce123
+estudiante@estudiante.com
+estu123

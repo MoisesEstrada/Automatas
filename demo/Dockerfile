@@ -1,5 +1,5 @@
 # Etapa 1: Build
-FROM maven:3.8.5-openjdk-17 AS build
+FROM maven:3.8.5-openjdk-21 AS build
 WORKDIR /app
 # Copiamos archivos de configuración de Maven
 COPY pom.xml .

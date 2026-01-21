@@ -1,30 +1,84 @@
-<div class="landing-container d-flex flex-column justify-content-center align-items-center text-center">
-
-    <div class="mb-5 animate-bounce">
-        <i class="bi bi-globe-americas text-success" style="font-size: 8rem;"></i>
-    </div>
-
-    <h1 class="display-4 fw-bold mb-3 text-dark">
-        La forma divertida de aprender idiomas
-    </h1>
-
-    <p class="lead text-muted mb-5" style="max-width: 600px;">
-        Desarrolla tus habilidades con ejercicios interactivos, audios y retos diarios.
-        ¡Totalmente gratis para la universidad!
-    </p>
-
-    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-        <a routerLink="/roles" class="btn btn-primary btn-lg px-5 py-3 fs-5">
-            EMPEZAR AHORA
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="#">
+            <i class="bi bi-translate me-2 fs-4"></i>
+            <span>University<span class="text-secondary">English</span></span>
         </a>
-
-        <a routerLink="/roles" class="btn btn-outline-secondary btn-lg px-5 py-3 fs-5 text-uppercase">
-            Ya tengo cuenta
-        </a>
+        <div class="ms-auto">
+            <a routerLink="/login" class="btn btn-outline-primary fw-bold px-4 rounded-pill">
+                Ingresar
+            </a>
+        </div>
     </div>
+</nav>
 
+<div class="hero-section d-flex align-items-center">
+    <div class="container">
+        <div class="row align-items-center flex-column-reverse flex-lg-row">
+
+            <div class="col-lg-6 text-center text-lg-start mt-5 mt-lg-0">
+                <span class="badge bg-soft-primary text-primary mb-3 px-3 py-2 rounded-pill fw-bold">
+                    🚀 Nuevo semestre 2026
+                </span>
+
+                <h1 class="display-4 fw-extrabold text-dark mb-4 lh-sm">
+                    Habla inglés con <br>
+                    <span class="text-primary position-relative">
+                        fluidez y confianza
+                        <svg class="underline-svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+                            <path d="M0 5 Q 50 10 100 5" stroke="#ffc107" stroke-width="8" fill="none" />
+                        </svg>
+                    </span>
+                </h1>
+
+                <p class="lead text-secondary mb-5 pe-lg-5">
+                    La plataforma universitaria diseñada para ingenieros. Ejercicios desde los mas basicos hasta lo mas avanzado.
+                </p>
+
+                <div class="d-flex justify-content-center justify-content-lg-start gap-4 mb-5 text-secondary small fw-bold">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i> 100% Online
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i> Gratis
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i> 24/7
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                    <a routerLink="/roles" class="btn btn-primary btn-lg px-5 py-3 rounded-pill shadow-lg fw-bold btn-cta">
+                        ¡EMPIEZA AHORA!
+                    </a>
+                </div>
+
+                <p class="mt-3 small text-muted">
+                    *Acceso exclusivo para estudiantes de Ing. de Software.
+                </p>
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                <div class="blob-bg"></div>
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+                     alt="Estudiante feliz"
+                     class="img-fluid position-relative rounded-4 shadow-lg hero-image animate-float">
+
+                <div class="floating-card bg-white p-3 rounded-3 shadow d-flex align-items-center gap-3">
+                    <div class="bg-success rounded-circle p-2 text-white">
+                        <i class="bi bi-trophy-fill"></i>
+                    </div>
+                    <div>
+                        <div class="fw-bold text-dark">Nivel B2</div>
+                        <div class="small text-muted">Completado</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
-<footer class="mt-auto py-3 text-muted">
+<footer class="bg-light py-4 text-center text-muted border-top">
     <small>© 2026 Proyecto Universitario - Ingeniería de Software</small>
 </footer>

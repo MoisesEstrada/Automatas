@@ -1,34 +1,50 @@
-<div class="selection-container d-flex flex-column justify-content-center align-items-center vh-100">
+<div class="selection-container d-flex flex-column justify-content-center align-items-center vh-100 position-relative overflow-hidden">
 
-    <h1 class="fw-bold mb-5 text-dark">¿Cómo deseas ingresar?</h1>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
 
-    <div class="d-flex flex-column flex-md-row gap-4">
+    <div class="text-center mb-5 z-index-2">
+        <h1 class="display-5 fw-extrabold text-dark mb-2">¡Bienvenido de nuevo!</h1>
+        <p class="lead text-muted">Selecciona tu perfil para ingresar al portal</p>
+    </div>
 
-        <a routerLink="/login" [queryParams]="{tipo: 'docente'}" class="card role-card text-decoration-none text-dark p-4 text-center">
-            <div class="card-body">
-                <div class="icon-circle bg-warning mb-3 mx-auto d-flex align-items-center justify-content-center">
-                    <i class="bi bi-briefcase-fill text-white fs-1"></i>
+    <div class="d-flex flex-column flex-md-row gap-4 z-index-2">
+
+        <a routerLink="/login" [queryParams]="{tipo: 'docente'}" class="card role-card role-teacher text-decoration-none p-4 text-center border-0 shadow-sm">
+            <div class="card-body d-flex flex-column align-items-center">
+                <div class="icon-wrapper bg-soft-warning mb-4">
+                    <i class="bi bi-briefcase-fill text-warning fs-1"></i>
                 </div>
-                <h3 class="fw-bold">Docente / Admin</h3>
-                <p class="text-muted">Gestiona cursos y usuarios</p>
+                <h3 class="fw-bold text-dark mb-2">Docente / Admin</h3>
+                <p class="text-secondary small mb-4 px-2">
+                    Accede al panel de control, gestiona usuarios y revisa reportes.
+                </p>
+                <div class="btn-fake text-warning fw-bold small text-uppercase">
+                    Ingresar <i class="bi bi-arrow-right ms-1 transition-icon"></i>
+                </div>
             </div>
         </a>
 
-        <a routerLink="/login" [queryParams]="{tipo: 'estudiante'}" class="card role-card text-decoration-none text-dark p-4 text-center">
-            <div class="card-body">
-                <div class="icon-circle bg-success mb-3 mx-auto d-flex align-items-center justify-content-center">
-                    <i class="bi bi-backpack-fill text-white fs-1"></i>
+        <a routerLink="/login" [queryParams]="{tipo: 'estudiante'}" class="card role-card role-student text-decoration-none p-4 text-center border-0 shadow-sm">
+            <div class="card-body d-flex flex-column align-items-center">
+                <div class="icon-wrapper bg-soft-primary mb-4">
+                    <i class="bi bi-mortarboard-fill text-primary fs-1"></i>
                 </div>
-                <h3 class="fw-bold">Estudiante</h3>
-                <p class="text-muted">Ingresa a tus lecciones</p>
+                <h3 class="fw-bold text-dark mb-2">Estudiante</h3>
+                <p class="text-secondary small mb-4 px-2">
+                    Continúa tu aprendizaje, realiza ejercicios y sube de nivel.
+                </p>
+                <div class="btn-fake text-primary fw-bold small text-uppercase">
+                    Ingresar <i class="bi bi-arrow-right ms-1 transition-icon"></i>
+                </div>
             </div>
         </a>
 
     </div>
 
-    <div class="mt-5">
-        <a routerLink="/" class="text-muted text-decoration-none">
-            <i class="bi bi-arrow-left"></i> Volver al inicio
+    <div class="mt-5 z-index-2">
+        <a routerLink="/" class="text-secondary text-decoration-none d-flex align-items-center hover-underline">
+            <i class="bi bi-arrow-left me-2"></i> Volver al inicio
         </a>
     </div>
 </div>

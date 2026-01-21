@@ -1,24 +1,117 @@
+/* Importar fuente si no es global */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+:host {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .selection-container {
-    background-color: #f7f7f7;
+    background-color: #f8f9fa; /* Fondo gris muy suave */
+    background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
 }
 
+.z-index-2 {
+    z-index: 2;
+    position: relative;
+}
+
+/* Títulos */
+.fw-extrabold {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+/* --- TARJETAS DE ROL --- */
 .role-card {
-    width: 280px;
-    border-radius: 20px;
-    border: 3px solid transparent;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    width: 300px; /* Un poco más anchas */
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto rebote suave */
+    border-bottom: 6px solid transparent; /* Preparar borde inferior */
 }
 
-.role-card:hover {
+/* Estilos específicos DOCENTE (Amarillo/Naranja) */
+.role-teacher .bg-soft-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+}
+.role-teacher:hover {
+    border-bottom-color: #ffc107;
     transform: translateY(-10px);
-    border-color: #e5e5e5;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(255, 193, 7, 0.15) !important;
 }
 
-.icon-circle {
-    width: 80px;
-    height: 80px;
+/* Estilos específicos ESTUDIANTE (Azul/Primary) */
+.role-student .bg-soft-primary {
+    background-color: rgba(13, 110, 253, 0.1);
+}
+.role-student:hover {
+    border-bottom-color: #0d6efd;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(13, 110, 253, 0.15) !important;
+}
+
+/* --- ICONOS --- */
+.icon-wrapper {
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.role-card:hover .icon-wrapper {
+    transform: scale(1.1); /* El icono crece al pasar el mouse */
+}
+
+/* --- TEXTO Y BOTÓN FALSO --- */
+.text-secondary {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.btn-fake {
+    letter-spacing: 1px;
+    transition: opacity 0.3s;
+}
+
+.transition-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.role-card:hover .transition-icon {
+    transform: translateX(5px); /* La flechita se mueve */
+}
+
+/* --- ENLACE VOLVER --- */
+.hover-underline:hover {
+    text-decoration: underline !important;
+    color: #343a40 !important;
+}
+
+/* --- DECORACIÓN DE FONDO (BLOBS) --- */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    background: #e0c3fc; /* Lila suave */
+}
+
+.blob-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: #8ec5fc; /* Azul suave */
 }

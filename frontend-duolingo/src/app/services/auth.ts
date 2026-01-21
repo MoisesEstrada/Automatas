@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router'; // <--- NUEVO: Para la redirección
 import { Observable, tap } from 'rxjs';
 
 const API_URL = 'http://localhost:8080/api';
 
-// 🔹 Interface actualizada según backend
 export interface LoginResponse {
   id: number;
   username: string;
@@ -18,15 +18,17 @@ export interface LoginResponse {
 export class AuthService {
   private user: { id: number; username: string; role: string } | null = null;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private router: Router // <--- NUEVO: Inyectamos el router
+  ) {
     const stored = localStorage.getItem('user');
     if (stored && stored !== 'undefined') {
       try {
         this.user = JSON.parse(stored);
       } catch (e) {
         console.warn('localStorage "user" corrupted, resetting.');
-        this.user = null;
-        localStorage.removeItem('user');
+        this.logout(); // Usamos logout para limpiar todo si hay error
       }
     }
   }
@@ -34,18 +36,17 @@ export class AuthService {
   login(credentials: { username: string; password: string }): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${API_URL}/auth/login`, credentials).pipe(
       tap(response => {
-        // Guardamos solo lo necesario para Angular
+        // Guardamos el token de forma segura
         localStorage.setItem('auth_token', response.token);
-        localStorage.setItem('user', JSON.stringify({
-          id: response.id,
-          username: response.username,
-          role: response.role
-        }));
-        this.user = {
+
+        const userData = {
           id: response.id,
           username: response.username,
           role: response.role
         };
+
+        localStorage.setItem('user', JSON.stringify(userData));
+        this.user = userData;
       })
     );
   }
@@ -58,8 +59,21 @@ export class AuthService {
     return localStorage.getItem('auth_token');
   }
 
+  // ==========================================
+  // ARREGLO: LOGOUT CON REDIRECCIÓN A PORTADA
+  // ==========================================
   logout(): void {
-    localStorage.clear();
+    // 1. Limpiamos datos locales
+    localStorage.removeItem('auth_token');
+    localStorage.removeItem('user');
+    localStorage.clear(); // Limpieza profunda por si acaso
+
+    // 2. Reseteamos el estado interno
     this.user = null;
+
+    // 3. REDIRECCIÓN AL INICIO (Portada / Landing Page)
+    // Esto asegura que al salir del panel Docente/Admin/Estudiante
+    // termine en la raíz ''
+    this.router.navigate(['/']);
   }
 }

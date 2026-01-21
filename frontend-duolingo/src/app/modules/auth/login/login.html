@@ -1,48 +1,69 @@
-<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
-    <div class="card p-4 shadow-sm" style="max-width: 400px; width: 100%; border-radius: 20px;">
+<div class="login-wrapper d-flex justify-content-center align-items-center vh-100 px-3">
 
-      <div class="text-center mb-4">
-        <h2 class="fw-bold text-success">{{ tituloLogin }}</h2>
-
-        <p class="text-muted">
-            {{ esDocente ? 'Gestiona tus cursos y alumnos' : '¡Continúa tu racha de aprendizaje!' }}
-        </p>
-      </div>
-
-      <form (ngSubmit)="onLogin()">
-
-        <div class="mb-3">
-          <label class="form-label fw-bold">Usuario</label>
-          <input type="text"
-                 class="form-control form-control-lg"
-                 placeholder="Ej: admin"
-                 [(ngModel)]="credentials.username"
-                 name="username"
-                 required>
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label fw-bold">Contraseña</label>
-          <input type="password"
-                 class="form-control form-control-lg"
-                 placeholder="******"
-                 [(ngModel)]="credentials.password"
-                 name="password"
-                 required>
-        </div>
-
-        <div class="d-grid gap-2 mt-4">
-          <button type="submit" class="btn btn-primary btn-lg fw-bold">
-            ENTRAR
-          </button>
-        </div>
-
-        <div class="text-center mt-3">
-            <a routerLink="/roles" class="text-decoration-none text-muted small">
-                <i class="bi bi-arrow-left"></i> Cambiar de rol
-            </a>
-        </div>
-
-      </form>
+    <div class="login-bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
     </div>
-  </div>
+
+    <div class="card login-card p-4 p-md-5 shadow-lg border-0" [ngClass]="esDocente ? 'border-top-teacher' : 'border-top-student'">
+
+        <div class="text-center mb-5">
+            <div class="login-icon mx-auto mb-3" [ngClass]="esDocente ? 'bg-soft-warning' : 'bg-soft-primary'">
+                <i class="bi" [ngClass]="esDocente ? 'bi-briefcase-fill text-warning' : 'bi-person-fill text-primary'"></i>
+            </div>
+
+            <h2 class="fw-extrabold text-dark mb-2">{{ tituloLogin }}</h2>
+            <p class="text-muted small px-3">
+                {{ esDocente ? 'Gestiona tus cursos y alumnos con eficiencia' : '¡Tu racha te espera! Continúa aprendiendo hoy.' }}
+            </p>
+        </div>
+
+        <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+
+            <div class="mb-4">
+                <label class="form-label fw-bold text-dark small text-uppercase">Nombre de Usuario</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0 text-muted">
+                        <i class="bi bi-person"></i>
+                    </span>
+                    <input type="text"
+                           class="form-control form-control-lg border-start-0 ps-0 fs-6"
+                           placeholder="Ingresa tu usuario"
+                           [(ngModel)]="credentials.username"
+                           name="username"
+                           required>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-bold text-dark small text-uppercase">Contraseña</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0 text-muted">
+                        <i class="bi bi-lock"></i>
+                    </span>
+                    <input type="password"
+                           class="form-control form-control-lg border-start-0 ps-0 fs-6"
+                           placeholder="••••••••"
+                           [(ngModel)]="credentials.password"
+                           name="password"
+                           required>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 mt-2">
+                <button type="submit"
+                        class="btn btn-lg fw-bold rounded-pill btn-login py-3 mt-3"
+                        [ngClass]="esDocente ? 'btn-warning text-white' : 'btn-primary shadow-primary'">
+                    ENTRAR AHORA
+                </button>
+            </div>
+
+            <div class="text-center mt-4">
+                <a routerLink="/roles" class="text-decoration-none text-secondary back-link small fw-bold">
+                    <i class="bi bi-arrow-left-circle me-1"></i> CAMBIAR MI ROL
+                </a>
+            </div>
+
+        </form>
+    </div>
+</div>

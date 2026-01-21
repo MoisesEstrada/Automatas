@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+.login-wrapper {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f7f6;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Tarjeta de Login */
+.login-card {
+    max-width: 450px;
+    width: 100%;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.fw-extrabold { font-weight: 800; }
+
+/* Bordes superiores dinámicos */
+.border-top-student { border-top: 8px solid #0d6efd; }
+.border-top-teacher { border-top: 8px solid #ffc107; }
+
+/* Icono de círculo */
+.login-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.bg-soft-primary { background-color: rgba(13, 110, 253, 0.1); }
+.bg-soft-warning { background-color: rgba(255, 193, 7, 0.1); }
+
+/* Inputs mejorados */
+.form-control {
+    border-radius: 12px;
+    padding: 12px;
+    border-color: #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #0d6efd;
+}
+
+.input-group-text {
+    border-radius: 12px;
+    border-color: #e2e8f0;
+}
+
+/* Botones con estilo SaaS */
+.btn-login {
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+}
+
+.shadow-primary {
+    box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
+}
+
+/* Enlace de volver */
+.back-link {
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #333 !important;
+}
+
+/* Decoraciones de fondo (Shapes) */
+.login-bg-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: #0d6efd;
+    top: -100px;
+    left: -100px;
+    opacity: 0.15;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    background: #ffc107;
+    bottom: -150px;
+    right: -150px;
+    opacity: 0.1;
+}
